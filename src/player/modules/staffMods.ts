@@ -1,7 +1,4 @@
-import {
-  NotificationLevel,
-  StaffMod
-} from '@minecraft-js/lunarbukkitapi';
+import { NotificationLevel, StaffMod } from '@minecraft-js/lunarbukkitapi';
 import { config, player } from '../..';
 import Item from '../../Classes/Item';
 import PlayerModule from '../PlayerModule';
