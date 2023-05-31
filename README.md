@@ -1,6 +1,6 @@
-# HybrisMC
+# HybrProxy
 
-![GitHub](https://img.shields.io/github/license/HybrisMC/HybrProxy?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/TBHGodPro/HybrProxy?style=for-the-badge)
 ![Maintenance](https://img.shields.io/maintenance/yes/2023?style=for-the-badge)
 
 Minecraft proxy server for Hypixel. It's like a stats overlay, but better. For now you must build it yourself and enjoy it before a release. And as a lot of our projects, this one is also open source!
@@ -16,7 +16,7 @@ To use it you need to have [NodeJS](https://nodejs.org/en/) installed. _(LTS ver
 Clone the repository on your machine using
 
 ```bash
-$ git clone https://github.com/HybrisMC/HybrProxy
+$ git clone https://github.com/TBHGodPro/HybrProxy
 ```
 
 Once the repo is downloaded move to the directory and install the dependencies
@@ -71,14 +71,6 @@ At the root of the project (or in the same directory as the executable) create a
 $ npm start
 ```
 
-### With the executable
-
-Just execute the executable file. For non windows operating system you can use
-
-```bash
-$ .\path\to\executable
-```
-
 ### Arguments
 
 HybrProxy supports the following arguments:
@@ -90,9 +82,8 @@ HybrProxy supports the following arguments:
 
 When you will login for the first time you will see in the console a message like this:
 
-```bash
-[msa] First time signing in. Please authenticate now:
-To sign in, use a web browser to open the page https://www.microsoft.com/link and enter the code XXXXXXXX to authenticate.
+```
+Please login to Microsoft to continue! Go to "https://www.microsoft.com/link" and enter the code XXXXXXXX to authenticate!
 ```
 
 Open a browser and login with your Microsoft account.
