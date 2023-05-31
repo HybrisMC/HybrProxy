@@ -24,6 +24,7 @@ export const version = JSON.parse(
   )
 ).version;
 export let config = getConfig();
+export const dashboard = initDashboard();
 if (
   !/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/.test(
     config.apiKey
@@ -32,10 +33,14 @@ if (
   Logger.error(
     'Invalid API Key! Make sure to put a valid API Key in the config.json file'
   );
+  dashboard.emit('notification', {
+    message: 'Invalid API Key!',
+    type: 'error',
+    duration: 2000,
+  });
   process.exit(1);
 }
 export const hypixelClient = createClient(config.apiKey);
-export const dashboard = initDashboard();
 
 process.title = 'HybrProxy';
 

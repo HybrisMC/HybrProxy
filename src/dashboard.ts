@@ -1,4 +1,5 @@
 import { Game } from 'hypixel-api-reborn';
+import { MicrosoftDeviceAuthorizationResponse } from 'minecraft-protocol';
 import { exec } from 'node:child_process';
 import { readdir } from 'node:fs/promises';
 import { createServer, IncomingMessage } from 'node:http';
@@ -14,7 +15,6 @@ import {
   setValue,
 } from './utils/config';
 import { PluginInfo } from './utils/plugins';
-import { MicrosoftDeviceAuthorizationResponse } from 'minecraft-protocol';
 
 const logger = new Logger('Dashboard');
 

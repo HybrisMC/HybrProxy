@@ -1,5 +1,4 @@
 import {
-  LunarClientMod,
   LunarClientPlayer,
   NotificationLevel,
 } from '@minecraft-js/lunarbukkitapi';
