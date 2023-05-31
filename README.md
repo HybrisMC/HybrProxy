@@ -1,6 +1,6 @@
 # HybrProxy
 
-![GitHub](https://img.shields.io/github/license/TBHGodPro/HybrProxy?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/TBHGodPro/HybrProxy-Pre?style=for-the-badge)
 ![Maintenance](https://img.shields.io/maintenance/yes/2023?style=for-the-badge)
 
 Minecraft proxy server for Hypixel. It's like a stats overlay, but better. For now you must build it yourself and enjoy it before a release. And as a lot of our projects, this one is also open source!
@@ -16,7 +16,7 @@ To use it you need to have [NodeJS](https://nodejs.org/en/) installed. _(LTS ver
 Clone the repository on your machine using
 
 ```bash
-$ git clone https://github.com/TBHGodPro/HybrProxy
+$ git clone https://github.com/TBHGodPro-Pre
 ```
 
 Once the repo is downloaded move to the directory and install the dependencies

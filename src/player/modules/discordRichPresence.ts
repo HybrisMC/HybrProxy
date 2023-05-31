@@ -50,12 +50,20 @@ export async function updateActivity() {
           smallImageKey: `https://cravatar.eu/avatar/${player.uuid}.png`,
           smallImageText: player.client.username,
         }),
+    buttons: [
+      {
+        label: 'Download HybrProxy',
+        url: 'https://github.com/TBHGodPro/HybrProxy-Pre',
+      },
+    ],
   };
 
   if (JSON.stringify(activity) == JSON.stringify(info)) return;
   activity = info;
 
-  await discordClient.setActivity(info).catch((err) => logger.error(err.message));
+  await discordClient
+    .setActivity(info)
+    .catch((err) => logger.error(err.message));
 }
 
 export async function enableActivity() {
