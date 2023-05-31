@@ -55,7 +55,9 @@ export async function updateActivity() {
   if (JSON.stringify(activity) == JSON.stringify(info)) return;
   activity = info;
 
-  await discordClient.setActivity(info).catch((err) => logger.error(err.message));
+  await discordClient
+    .setActivity(info)
+    .catch((err) => logger.error(err.message));
 }
 
 export async function enableActivity() {

@@ -1,10 +1,10 @@
 import Item from '../Classes/Item';
 import { ModuleSettings, ModuleSettingsSchema } from '../Types';
 import {
-    getConfig,
-    isValidModuleSettings,
-    isValidModuleSettingsSchema,
-    setValueSync,
+  getConfig,
+  isValidModuleSettings,
+  isValidModuleSettingsSchema,
+  setValueSync,
 } from '../utils/config';
 import { PluginInfo } from '../utils/plugins';
 import Player from './Player';
