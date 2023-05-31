@@ -60,6 +60,9 @@ export default {
   text-align: center;
   padding: 0px 2.5%;
 }
+.box > h2 {
+  user-select: text;
+}
 .box > h4 {
   font-size: 0.8rem;
 }
