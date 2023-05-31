@@ -1,0 +1,6 @@
+dist/
+node_modules/
+
+src/cwd.js
+
+**/.DS_STORE

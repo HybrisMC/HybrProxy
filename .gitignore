@@ -1,0 +1,19 @@
+# Usual
+
+node_modules/
+build/
+dist/
+config.json
+.vscode
+packetDump.json
+!dashboard/**
+**/.DS_STORE
+
+# Plugins
+
+plugins/*
+
+# Temp/Testing
+
+src/player/modules/test.ts
+src/Classes/PlayerControllers/SideBar.ts

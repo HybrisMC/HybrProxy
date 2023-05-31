@@ -1,0 +1,25 @@
+{
+  "apiKey": "", // Your Hypixel API key (`/api` in game)
+  "heightLimitDelayFix": true, // Makes the delay before a block is removed when above the height ultra fast,
+  "bedwarsWaypoints": true, // Enable waypoints for Bedwars
+  "lunarCooldowns": true, // Enable Lunar cooldown mod (arrow in bridge for example)
+  "bedwarsTeammates": true, // Make the TeamView mod work for Bedwars
+  "server": {
+    // Server to connect to
+    "host": "hypixel.net", // IP of the server
+    "port": 25565 // Port of the server
+  },
+  "dashboard": {
+    // Dashboard settings
+    "enabled": true, // Whether dashboard is enabled
+    "port": 7777 // Dashboard port, not relevant unless you have other programs running on the same port
+  },
+  "proxyPort": 25556, // Port of the Proxy
+  "customEmotes": {
+    ":solar:": "☀" // "syntax": "emote (syntax is the message you type in chat, and the emote is the one you see)"
+  },
+  "checkForUpdates": true, // Check for updates on startup
+  "autoDownloadUpdates": true, // Automatically download updates if available
+  "modules": {}, // Module Statuses
+  "settings": {} // Module Settings
+}
