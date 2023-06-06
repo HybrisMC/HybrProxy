@@ -9,14 +9,14 @@ Minecraft proxy server for Hypixel. It's like a stats overlay, but better. For n
 
 # Usage ⚒️
 
-To use it you need to have [NodeJS](https://nodejs.org/en/) installed. _(LTS version is recommended)_
+To use it you need to have [NodeJS](https://nodejs.org/en/) v16 installed.
 
 # Building from source 🏗️
 
 Clone the repository on your machine using
 
 ```bash
-$ git clone https://github.com/TBHGodPro-Pre
+$ git clone https://github.com/TBHGodPro/HybrProxy-Pre HybrProxy
 ```
 
 Once the repo is downloaded move to the directory and install the dependencies
@@ -51,14 +51,7 @@ At the root of the project (or in the same directory as the executable) create a
   "checkForUpdates": true,
   "autoDownloadUpdates": true,
   "statistics": true,
-  "modules": {
-    "bedwarsWaypoints": true,
-    "heightLimitDelayFix": true,
-    "lunarCooldowns": true,
-    "bedwarsTeammates": true,
-    "mvpppEmotes": true,
-    "stats": true
-  }
+  "modules": {}
 }
 ```
 <!-- prettier-ignore-end -->
