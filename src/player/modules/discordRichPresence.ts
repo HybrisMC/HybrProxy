@@ -53,7 +53,7 @@ export async function updateActivity() {
     buttons: [
       {
         label: 'Download HybrProxy',
-        url: 'https://github.com/TBHGodPro/HybrProxy-Pre',
+        url: 'https://github.com/HybrisMC/HybrProxy-Pre',
       },
     ],
   };

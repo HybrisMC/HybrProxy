@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TBHGodPro/HybrProxy-Pre.git"
+    "url": "git+https://github.com/HybrisMC/HybrProxy-Pre.git"
   },
   "keywords": [
     "proxy",
@@ -29,7 +29,7 @@
   ],
   "author": "TBHGodPro",
   "license": "GPL-3.0",
-  "homepage": "https://github.com/TBHGodPro/HybrProxy-Pre#readme",
+  "homepage": "https://github.com/HybrisMC/HybrProxy-Pre#readme",
   "dependencies": {
     "@minecraft-js/chat": "^1.0.0",
     "@minecraft-js/lunarbukkitapi": "^1.1.3",
