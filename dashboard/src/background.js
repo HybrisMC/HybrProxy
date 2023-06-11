@@ -14,13 +14,6 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } },
 ]);
 
-let PORT;
-try {
-  PORT = JSON.parse(readFileSync(join(cwd, 'config.json'), 'utf-8')).dashboard
-    .port;
-} catch {}
-if (!PORT) PORT = 7777;
-
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
@@ -51,11 +44,6 @@ async function createWindow() {
     // Load the index.html when not in development
     await win.loadURL('app://./index.html');
   }
-
-  win.webContents.send('PORT', PORT);
-  win.webContents.on('did-finish-load', () =>
-    win.webContents.send('PORT', PORT)
-  );
 }
 
 // Quit when all windows are closed.

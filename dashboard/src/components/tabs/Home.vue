@@ -3,6 +3,7 @@
     <div class="home-grid-row row-2">
       <div class="box box-3">
         <h1>Info</h1>
+        <h3>Uptime: {{ uptime }}</h3>
         <h3>
           Server: {{ $store.state.data.config.server.host
           }}{{
@@ -115,10 +116,6 @@
             ></span
           >
         </h2>
-      </div>
-      <div class="box box-1">
-        <h1>Uptime</h1>
-        <h2>{{ uptime }}</h2>
       </div>
     </div>
     <div class="home-grid-row row-1" v-if="$store.state.data.player">

@@ -186,9 +186,6 @@ export const configSchema = {
         enabled: {
           type: 'boolean',
         },
-        port: {
-          type: 'number',
-        },
       },
       type: 'object',
     },
@@ -230,7 +227,6 @@ export const defaultConfig: Config = {
   },
   dashboard: {
     enabled: true,
-    port: 7777,
   },
   proxyPort: 25556,
   customEmotes: {},

@@ -47,15 +47,11 @@ export class DashboardManager {
     (async () => {
       const config = await getConfigAsync();
 
-      if (isNaN(config.dashboard.port)) return logger.error('Invalid Port');
-
       this.server.on('listening', () =>
-        logger.info(
-          `Dashboard WebSocket Online at port ${config.dashboard.port}`
-        )
+        logger.info(`Dashboard WebSocket Online at Port 16055`)
       );
 
-      httpServer.listen(config.dashboard.port);
+      httpServer.listen(16055);
 
       if (config.dashboard.enabled)
         setTimeout(async () => {

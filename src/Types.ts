@@ -11,7 +11,6 @@ export interface Config {
   };
   dashboard: {
     enabled: boolean;
-    port: number;
   };
   proxyPort: number;
   customEmotes: { [key: string]: string };
