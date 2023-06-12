@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/icon-high-res.png" alt="HyrbisLogo" width="208" height="208" />
+<img src="./assets/icon-high-res.png" alt="HyrbisLogo" width="224" height="224" style="margin-bottom: 25px;" />
 
 # HybrProxy
 
