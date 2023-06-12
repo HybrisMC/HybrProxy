@@ -1,4 +1,4 @@
-import { NotificationLevel, StaffMod } from '@minecraft-js/lunarbukkitapi';
+import { NotificationLevel } from '@minecraft-js/lunarbukkitapi';
 import { config, player } from '../..';
 import Item from '../../Classes/Item';
 import PlayerModule from '../PlayerModule';
@@ -21,27 +21,23 @@ const playerModule = new PlayerModule(
 
 function enableStaffMods(notify = true) {
   if (notify)
-    player.lcPlayer?.sendNotification(
+    player.customClient.sendNotification(
       'Enabled Staff Mods',
       1500,
       NotificationLevel.INFO
     );
 
-  player.lcPlayer?.setStaffModState(StaffMod.XRAY, true);
-  player.lcPlayer?.setStaffModState(StaffMod.NAME_TAGS, true);
-  player.lcPlayer?.setStaffModState(StaffMod.BUNNY_HOP, true);
+  player.customClient.setAllStaffModStates(true);
 }
 function disableStaffMods(notify = true) {
   if (notify)
-    player.lcPlayer?.sendNotification(
+    player.customClient.sendNotification(
       'Disabled Staff Mods',
       1500,
       NotificationLevel.INFO
     );
 
-  player.lcPlayer?.setStaffModState(StaffMod.XRAY, false);
-  player.lcPlayer?.setStaffModState(StaffMod.NAME_TAGS, false);
-  player.lcPlayer?.setStaffModState(StaffMod.BUNNY_HOP, false);
+  player.customClient.setAllStaffModStates(false);
 }
 
 player.listener.on('switch_server', () => {

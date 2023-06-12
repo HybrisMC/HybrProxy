@@ -1,8 +1,4 @@
-import {
-  LunarClientPlayer,
-  NotificationLevel,
-} from '@minecraft-js/lunarbukkitapi';
-import { parseUUID } from '@minecraft-js/uuid';
+import { NotificationLevel } from '@minecraft-js/lunarbukkitapi';
 import { Status } from 'hypixel-api-reborn';
 import { Client, ServerClient } from 'minecraft-protocol';
 import { readdirSync } from 'node:fs';
@@ -24,6 +20,7 @@ import {
 import { updateDashboardPlayer, updateMeta } from '../dashboard';
 import { fetchPlayerLocation, parseGameMode } from '../utils/hypixel';
 import loadPlugins, { PluginInfo } from '../utils/plugins';
+import PlayerCustomClient from './PlayerCustomClient';
 import PlayerModule from './PlayerModule';
 import PlayerProxyHandler from './PlayerProxyHandler';
 
@@ -33,12 +30,12 @@ export default class Player {
   public readonly plugins: PluginInfo[];
   public readonly proxy: InstantConnectProxy;
   public readonly proxyHandler: PlayerProxyHandler;
+  public readonly customClient: PlayerCustomClient;
   public commandHandler: CommandHandler;
   public modules: PlayerModule[];
 
   public client?: ServerClient;
   public lastGameMode?: string;
-  public lcPlayer?: LunarClientPlayer;
   public online?: boolean;
   public server?: Client;
   public status?: Status;
@@ -104,6 +101,7 @@ export default class Player {
     this.plugins = [];
     this.proxy = proxy;
 
+    this.customClient = new PlayerCustomClient(this);
     this.proxyHandler = new PlayerProxyHandler(this);
     this.listener = new Listener(this.proxyHandler);
     this.proxyHandler.setupListeners();
@@ -156,8 +154,8 @@ export default class Player {
     this.listener.on('switch_server', async () => {
       this.teams = [];
       this.connectedPlayers = [];
-      this.lcPlayer?.removeAllWaypoints();
-      this.lcPlayer?.removeAllTeammates();
+      this.customClient.removeAllWaypoints();
+      this.customClient.removeAllTeammates();
       await this.refreshPlayerLocation();
     });
 
@@ -233,24 +231,7 @@ export default class Player {
     this.connectedPlayers = [];
     this.uuid = client.uuid;
 
-    this.lcPlayer = new LunarClientPlayer({
-      playerUUID: parseUUID(this.uuid),
-      customHandling: {
-        registerPluginChannel: (channel) => {
-          this.client.write('custom_payload', {
-            channel: 'REGISTER',
-            data: Buffer.from(`${channel}\0`),
-          });
-        },
-        sendPacket: (buffer, channel) => {
-          this.client.write('custom_payload', {
-            channel: channel,
-            data: buffer,
-          });
-        },
-      },
-    });
-    this.lcPlayer?.connect();
+    this.customClient.connect();
 
     this.refreshPlayerLocation();
     // In case the user reconnects to the server and is directly in a game
@@ -264,11 +245,12 @@ export default class Player {
   public disconnect(): void {
     this.client = null;
     this.lastGameMode = null;
-    this.lcPlayer = null;
     this.online = false;
     this.status = null;
     this.teams = [];
     this.uuid = null;
+
+    this.customClient.disconnect();
 
     this.modules.forEach((module) => module.onDisconnect());
 
@@ -292,7 +274,7 @@ export default class Player {
     if (!this.status) return;
     if (!this.status.mode) return;
     if (this.status.mode === 'LOBBY') return;
-    this.lcPlayer?.sendNotification(
+    this.customClient.sendNotification(
       'Dodging game...',
       2500,
       NotificationLevel.INFO

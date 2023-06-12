@@ -31,10 +31,10 @@ player.proxyHandler.on('fromServer', ({ data, name }) => {
 
   switch (data.item.blockId) {
     case -1:
-      player.lcPlayer?.addCooldown('hypixel_bow', 3500, 261);
+      player.customClient.addCooldown('hypixel_bow', 3500, 261);
       break;
     case 262:
-      player.lcPlayer?.removeCooldown('hypixel_bow');
+      player.customClient.removeCooldown('hypixel_bow');
       break;
     default:
       break;
