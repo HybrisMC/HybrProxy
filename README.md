@@ -6,9 +6,9 @@
 
 A nice, open-sourced, non-modification server proxy for Hypixel.
 
-<a href="https://www.typescriptlang.org/"><img alt="Typescript" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.1.1/assets/cozy/built-with/typescript_vector.svg"></a>
-<a href="https://discord.gg/hyrbis"><img alt="Discord Server" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a>
-<a href="https://hybrismc.dev"><img alt="Website" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg"></a>
+<a href="https://www.typescriptlang.org/"><img alt="Typescript" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.1.1/assets/cozy/built-with/typescript_vector.svg" target="_blank"></a>
+<a href="https://discord.gg/hyrbis"><img alt="Discord Server" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg" target="_blank"></a>
+<a href="https://hybrismc.dev"><img alt="Website" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg" target="_blank"></a>
 
 </div>
 
@@ -28,7 +28,7 @@ Suggested features are always being considered and sometimes added.
 
 ### ⚠️ Requirements
 
-To use it you need to have [NodeJS v16](https://nodejs.org/download/release/v16.20.0/) installed.
+To use it you need to have <a href="https://nodejs.org/download/release/v16.20.0/" target="_blank">NodeJS 16</a> installed.
 
 **The version may contain bugs, as it's not fully released!**
 
