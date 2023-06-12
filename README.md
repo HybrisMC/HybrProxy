@@ -55,7 +55,7 @@ $ npm run build
 
 ## Configuration ⚙️
 
-At the root of the project (or in the same directory as the executable) create a `config.json` file with the following content:
+At the root of the project (or in the same directory as the executable) create a `config.json` file with the following content (you must remove the comments if you copy-paste):
 
 ```jsonc
 {
