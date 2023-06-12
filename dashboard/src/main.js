@@ -4,6 +4,7 @@ import { ipcRenderer } from 'electron';
 import { createApp } from 'vue';
 import App from './App.vue';
 import constants from './constants';
+import { cwd } from './cwd';
 import store, { showNotification } from './store';
 
 import './assets/global.css';

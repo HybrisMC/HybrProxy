@@ -2,10 +2,7 @@
 
 require('@electron/remote/main').initialize();
 import { app, BrowserWindow, ipcMain, Menu, protocol } from 'electron';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
-import { cwd } from './cwd';
 
 const isDevelopment = !!process.env.WEBPACK_DEV_SERVER_URL;
 

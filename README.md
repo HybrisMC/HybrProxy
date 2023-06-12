@@ -1,22 +1,43 @@
+<div align="center">
+
+<img src="./assets/icon.ico" alt="HyrbisLogo">
+
 # HybrProxy
 
-![GitHub](https://img.shields.io/github/license/HybrisMC/HybrProxy-Pre?style=for-the-badge)
-![Maintenance](https://img.shields.io/maintenance/yes/2023?style=for-the-badge)
+A nice, open-sourced, non-modification server proxy for Hypixel.
 
-Minecraft proxy server for Hypixel. It's like a stats overlay, but better. For now you must build it yourself and enjoy it before a release. And as a lot of our projects, this one is also open source!
+<a href="https://www.typescriptlang.org/"><img alt="Typescript" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.1.1/assets/cozy/built-with/typescript_vector.svg"></a>
+<a href="https://discord.gg/hyrbis"><img alt="Discord Server" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a>
+<a href="https://hybrismc.dev"><img alt="Website" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg"></a>
 
-**⚠️ But this version may have bugs!**
+</div>
 
-# Usage ⚒️
+## 🤔 Why?
 
-To use it you need to have [NodeJS](https://nodejs.org/en/) v16 installed.
+### Easy to use
 
-# Building from source 🏗️
+Designed to be easy for less advanced players! These shouldn't be hard, so we try and ease the setup needed.
+
+### Free and open source
+
+Anyone can view, modify and redistribute the source code. If you have privacy concerns or curiosity, you can ensure yourself that the code is not doing anything malicious.
+
+### Active development
+
+Suggested features are always being considered and sometimes added.
+
+### ⚠️ Requirements
+
+To use it you need to have [NodeJS v16](https://nodejs.org/download/release/v16.20.0/) installed.
+
+**The version may contain bugs, as it's not fully released!**
+
+## 📝 Building from Source
 
 Clone the repository on your machine using
 
 ```bash
-$ git clone https://github.com/HybrisMC/HybrProxy-Pre HybrProxy
+$ git clone https://github.com/HybrisMC/HybrProxy
 ```
 
 Once the repo is downloaded move to the directory and install the dependencies
@@ -36,25 +57,33 @@ $ npm run build
 
 At the root of the project (or in the same directory as the executable) create a `config.json` file with the following content:
 
-<!-- prettier-ignore-start -->
-```json5
+```jsonc
 {
-  "apiKey": "API KEY HERE",
+  "apiKey": "API KEY HERE", // Connect to hypixel.net and do "/api new" and paste the API key here.
   "server": {
+    // Change this to the server you are trying to connect, by default it will be set as hypixel.
+    // (NOTE: Most other servers will not work)
     "host": "hypixel.net",
     "port": 25565
   },
+  "dashboard": {
+    // Whether to enable the app-dashboard for HybrProxy.
+    "enabled": true
+  },
+  "proxyPort": 25556, // The port for the proxy, you can connect using "localhost:PORT" as the Server IP
   "customEmotes": {
+    // Custom emojis you can add, you can use any symbols minecraft chat supports.
+    // Reference: https://justpaste.it/8mnld
     ":solar:": "☀",
     ":lunar:": "☾"
   },
-  "checkForUpdates": true,
-  "autoDownloadUpdates": true,
-  "statistics": true,
-  "modules": {}
+  "checkForUpdates": true, // Whether to automatically check for updates and inform you if there are any.
+  "autoDownloadUpdates": true, // Whether to automatically download new updates.
+  "statistics": true, // Whether to track statistics about how you use hybris (launches, online usage, etc.).
+  "modules": {},
+  "settings": {}
 }
 ```
-<!-- prettier-ignore-end -->
 
 ## Starting the server 🚀
 
@@ -69,17 +98,20 @@ $ npm start
 HybrProxy supports the following arguments:
 
 - `--config=/path/to/config.json`: Use a custom config file (default config file is `config.json` in the current working directory)
-- `--noTray`: Disable the tray icon
+- `--noTray`: Disable the tray icon (auto disabled if on a Mac and using the dashboard)
 
 # Authenticating 🔒
 
-When you will login for the first time you will see in the console a message like this:
+When you login with a new account for the first time you will see a console message like this:
 
 ```
 Please login to Microsoft to continue! Go to "https://www.microsoft.com/link" and enter the code XXXXXXXX to authenticate!
 ```
 
 Open a browser and login with your Microsoft account.
-If you have not migrated your account yet you can try to edit the code manually. _(Or migrate your account)_
 
-**⚠️ Mojang accounts wont be supported!**
+---
+
+## 🧪 Contributing
+
+If you want to contribute features, please make a [`fork`](https://github.com/HybrisMC/HybrProxy/fork) of the branch.
