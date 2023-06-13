@@ -31,8 +31,6 @@ export default class PlayerCustomClient {
   public setupInterceptors() {
     this.player.proxyHandler.on('fromServer', ({ name, data }) => {
       if (name === 'custom_payload') {
-        console.log('[SERVER]', data, data.data.toString());
-
         if (data.channel === 'badlion:mods')
           // Prevent bans from sneak in inventory
           this.player.client?.write('custom_payload', {
@@ -63,8 +61,6 @@ export default class PlayerCustomClient {
     });
     this.player.proxyHandler.on('fromClient', ({ name, data }) => {
       if (name === 'custom_payload') {
-        console.log('[CLIENT]', data, data.data.toString());
-
         if (PlayerCustomClient.AllPluginChannels.includes(data.channel.trim()))
           return false;
       }

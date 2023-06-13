@@ -1,17 +1,21 @@
 import * as remote from '@electron/remote';
-import { exec } from 'child_process';
+import { ChildProcess, fork } from 'child_process';
 import { ipcRenderer } from 'electron';
-import { createApp } from 'vue';
+import { Ref, createApp, ref } from 'vue';
 import App from './App.vue';
 import constants from './constants';
 import { cwd } from './cwd';
 import store, { showNotification } from './store';
 
+import { join } from 'path';
 import './assets/global.css';
 
 const { events } = constants;
 
 const app = createApp(App).use(store).mount('#app');
+
+/** @type {Ref<ChildProcess>} */
+export let { value: proc } = ref(null);
 
 const started = Date.now();
 let failedAttempts = 0;
@@ -44,7 +48,7 @@ function setup() {
         showNotification(
           'Failed to connect to HybrProxy<br/>Started new HybrProxy process',
           'info',
-          3500
+          2000
         );
       }
     };
@@ -144,5 +148,18 @@ export function startProcess() {
       break;
   }
 
-  exec(command, (err) => (err ? console.error(err) : null));
+  const p = fork(join(cwd, 'build/index.js'), {
+    cwd,
+    stdio: 'pipe',
+  });
+
+  p.on('disconnect', () => {
+    proc = null;
+  });
+
+  p.on('error', (err) => {
+    throw err;
+  });
+
+  proc = p;
 }

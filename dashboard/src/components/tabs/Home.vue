@@ -213,7 +213,7 @@ export default {
 .home-grid-row {
   display: flex;
   flex-direction: column;
-  margin: 0px 10px;
+  margin: 0px 5px;
 }
 .row-1 {
   flex: 1;
@@ -227,9 +227,9 @@ export default {
 
 .box {
   padding: 2.5vh 2.5vw;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: var(--color-lightest-bg);
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 .box-1 {
   flex: 1;

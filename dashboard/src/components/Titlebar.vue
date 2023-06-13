@@ -105,7 +105,7 @@
 <script>
 import { getCurrentWindow } from '@electron/remote';
 import { showNotification } from '../store';
-import { startProcess } from '../main';
+import { proc, startProcess } from '../main';
 
 export default {
   name: 'TitleBar',
@@ -163,6 +163,14 @@ export default {
     setActiveTab(tab) {
       this.$store.state.activeTab = tab;
     },
+  },
+  async beforeMount() {
+    while (true) {
+      if (proc && this.$store.getters.isConnected)
+        this.tabs = ['Home', 'Process', 'Modules', 'Plugins'];
+      else this.tabs = ['Home', 'Modules', 'Plugins'];
+      await new Promise((res) => setTimeout(res));
+    }
   },
 };
 </script>

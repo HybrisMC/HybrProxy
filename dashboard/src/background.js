@@ -19,7 +19,7 @@ async function createWindow() {
     frame: false,
     maximizable: false,
     fullscreenable: false,
-    resizable: false,
+    resizable: isDevelopment,
     focusable: true,
     webPreferences: {
       nodeIntegration: true,

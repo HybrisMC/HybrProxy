@@ -15,6 +15,7 @@
 import Home from './tabs/Home.vue';
 import Modules from './tabs/Modules.vue';
 import Plugins from './tabs/Plugins.vue';
+import Process from './tabs/Process.vue';
 
 export default {
   name: 'Content',
@@ -22,6 +23,7 @@ export default {
     Home,
     Modules,
     Plugins,
+    Process,
   },
 };
 </script>

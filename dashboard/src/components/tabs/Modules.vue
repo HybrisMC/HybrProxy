@@ -61,6 +61,7 @@
 
 <script>
 import ModuleSettingsPage from '../extras/ModuleSettingsPage.vue';
+
 export default {
   components: { ModuleSettingsPage },
   name: 'Modules',
