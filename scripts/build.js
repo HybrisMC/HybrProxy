@@ -10,9 +10,6 @@ function run(executable, params = []) {
 console.log('info: compiling typescript 💽');
 run('npx', ['tsc']);
 
-console.log('info: obfuscating stats module 🔒');
-run('node', ['./scripts/obfuscation.js']);
-
 if (!process.argv.includes('--noDashboard')) {
   console.log('info: building dashboard 🌐');
   run('cd dashboard && npm run build');
