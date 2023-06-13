@@ -28,7 +28,7 @@ Suggested features are always being considered and sometimes added.
 
 ### ⚠️ Requirements
 
-To use it you need to have [NodeJS 16]("https://nodejs.org/download/release/v16.20.0/") installed.
+To use it you need to have [NodeJS 16](https://nodejs.org/download/release/v16.20.0/) installed.
 
 **The version may contain bugs, as it's not fully released!**
 
