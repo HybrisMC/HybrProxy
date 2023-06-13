@@ -5,7 +5,7 @@
         <h1>Console</h1>
         <div id="console">
           <pre v-for="(line, index) in lines" v-bind:key="index">{{
-            line
+            line.replace('〉〈', '>  <').replace(/ /g, '&nbsp;')
           }}</pre>
         </div>
       </div>
@@ -104,5 +104,7 @@ h1 {
 pre {
   white-space: initial;
   user-select: text;
+  font-family: Courier, monospace;
+  line-height: 1px;
 }
 </style>
