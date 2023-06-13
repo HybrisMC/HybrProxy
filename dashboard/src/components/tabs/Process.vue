@@ -2,7 +2,6 @@
   <div id="home-grid">
     <div class="home-grid-row row-2">
       <div class="box box-3">
-        <h1>Console</h1>
         <div id="console">
           <pre v-for="(line, index) in lines" v-bind:key="index">{{
             line.replace('〉〈', '>  <').replace(/ /g, '&nbsp;')
@@ -93,8 +92,8 @@ h1 {
 #console {
   width: 1035px;
   margin-left: 15px;
-  height: 495px;
-  margin-top: -1%;
+  height: 550px;
+  margin-top: 15px;
   background-color: var(--color-dark-bg);
   border-radius: 20px;
   padding: 5px 15px;
