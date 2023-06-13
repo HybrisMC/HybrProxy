@@ -12,12 +12,63 @@ import { UUID, parseUUID } from '@minecraft-js/uuid';
 import Player from './Player';
 
 export default class PlayerCustomClient {
+  public static AllPluginChannels = [
+    'lunarclient:pm',
+    'Lunar-Client',
+    'badlion:mods',
+  ];
+
   public readonly player: Player;
 
   public lunar: LunarClientPlayer = null;
 
   constructor(player: Player) {
     this.player = player;
+
+    this.setupInterceptors();
+  }
+
+  public setupInterceptors() {
+    this.player.proxyHandler.on('fromServer', ({ name, data }) => {
+      if (name === 'custom_payload') {
+        console.log('[SERVER]', data, data.data.toString());
+
+        if (data.channel === 'badlion:mods')
+          // Prevent bans from sneak in inventory
+          this.player.client?.write('custom_payload', {
+            channel: 'badlion:mods',
+            data: Buffer.from(
+              JSON.stringify({
+                ToggleSprint: {
+                  extra_data: {
+                    inventorySneak: { disabled: true },
+                    flySpeed: { disabled: true },
+                  },
+                  disabled: false,
+                },
+                ToggleSneak: {
+                  extra_data: {
+                    inventorySneak: { disabled: true },
+                    flySpeed: { disabled: true },
+                  },
+                  disabled: false,
+                },
+              })
+            ),
+          });
+
+        if (PlayerCustomClient.AllPluginChannels.includes(data.channel.trim()))
+          return false;
+      }
+    });
+    this.player.proxyHandler.on('fromClient', ({ name, data }) => {
+      if (name === 'custom_payload') {
+        console.log('[CLIENT]', data, data.data.toString());
+
+        if (PlayerCustomClient.AllPluginChannels.includes(data.channel.trim()))
+          return false;
+      }
+    });
   }
 
   public connect() {

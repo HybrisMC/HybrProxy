@@ -101,8 +101,8 @@ export default class Player {
     this.plugins = [];
     this.proxy = proxy;
 
-    this.customClient = new PlayerCustomClient(this);
     this.proxyHandler = new PlayerProxyHandler(this);
+    this.customClient = new PlayerCustomClient(this);
     this.listener = new Listener(this.proxyHandler);
     this.proxyHandler.setupListeners();
 
