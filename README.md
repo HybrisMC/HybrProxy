@@ -55,7 +55,7 @@ $ npm run build
 
 ## Configuration ⚙️
 
-At the root of the project (or in the same directory as the executable) create a `config.json` file with the following content (you must remove the comments if you copy-paste):
+At the root of the project (or in the same directory as the executable) create a `config.jsonc` file with the following content:
 
 ```jsonc
 {
@@ -97,7 +97,7 @@ $ npm start
 
 HybrProxy supports the following arguments:
 
-- `--config=/path/to/config.json`: Use a custom config file (default config file is `config.json` in the current working directory)
+- `--config=/path/to/config.json(c)`: Use a custom config file (default config file is `config.jsonc` or `config.json` in the current working directory)
 - `--noTray`: Disable the tray icon (auto disabled if on a Mac and using the dashboard)
 
 # Authenticating 🔒

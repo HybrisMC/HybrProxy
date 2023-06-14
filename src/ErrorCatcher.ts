@@ -7,7 +7,7 @@ process.on('uncaughtException', (err) => {
   // Invalid API Key
   if (msg.includes('[hypixel-api-reborn] Invalid API Key!')) {
     Logger.error(
-      'Invalid API Key! Make sure to put a valid API Key in the config.json file'
+      'Invalid API Key! Make sure to put a valid API Key in the config.json(c) file'
     );
     process.exit(1);
   }

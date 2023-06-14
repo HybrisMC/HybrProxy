@@ -8,7 +8,9 @@ import { Config, ModuleSettings, ModuleSettingsSchema } from '../Types';
 const customConfigPath = process.argv
   .find((arg) => arg.startsWith('--config='))
   ?.split('=')[1];
-export const filePath = customConfigPath || './config.json';
+export const filePath =
+  customConfigPath ||
+  (existsSync('./config.jsonc') ? './config.jsonc' : './config.json');
 
 export function getConfig(): Config {
   const exists = existsSync(filePath);
