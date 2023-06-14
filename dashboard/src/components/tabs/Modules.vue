@@ -145,18 +145,18 @@ export default {
 }
 
 .module-toggle-btn {
-  width: 100%;
-  height: 50px;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  width: 96%;
+  height: 43px;
+  border-radius: 16px;
   text-shadow: var(--text-shadow);
   font-size: 15px;
   letter-spacing: 5px;
   font-weight: 600;
   position: absolute;
-  bottom: 0;
+  bottom: 7px;
   cursor: pointer;
-  margin-left: -50%;
+  margin-left: -48%;
+  z-index: 100;
 }
 .module-toggle-btn-disabled {
   background-color: var(--color-gray);
@@ -184,23 +184,30 @@ export default {
 }
 
 .module-options-btn {
-  width: 100%;
-  height: 50px;
+  width: 45%;
+  height: 30px;
   text-shadow: var(--text-shadow);
   font-size: 15px;
   letter-spacing: 5px;
   font-weight: 600;
   position: absolute;
-  bottom: 50px;
   cursor: pointer;
-  margin-left: -50%;
+  margin-left: -23%;
+  bottom: 18px;
   background-color: var(--color-darker-gray);
   border: none;
-  transition: filter 0.2s ease-in-out;
-  filter: brightness(1.2);
+  transition: filter 0.2s ease-in-out, bottom 0.2s ease-in-out;
+  filter: brightness(1.4);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  z-index: 99;
 }
 .module-options-btn:hover {
-  filter: brightness(1);
+  filter: brightness(1.2);
   cursor: default;
+  bottom: 50px;
+}
+.module-toggle-btn:hover + .module-options-btn {
+  bottom: 50px;
 }
 </style>
