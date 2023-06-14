@@ -226,3 +226,8 @@ export type ModuleSettings = {
 export type ModuleSettingsSchema = {
   [key: string]: 'string' | 'number' | 'boolean' | ModuleSettingsSchema;
 };
+
+export interface APIPlayer {
+  uuid: string;
+  username: string;
+}

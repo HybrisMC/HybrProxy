@@ -6,6 +6,7 @@ import { InstantConnectProxy } from 'prismarine-proxy';
 import { NIL } from 'uuid';
 import Logger from './Classes/Logger';
 import BossBar from './Classes/PlayerControllers/BossBar';
+import PlayerManager from './Classes/PlayerManager';
 import { Config, reloadEmotes } from './Types';
 import initDashboard, { updateConfig } from './dashboard';
 import Player from './player/Player';
@@ -62,6 +63,8 @@ console.log(` _   _           _              ____
 let versionString = '';
 for (let i = 0; i < 60 - version.length; i++) versionString += ' ';
 console.log(`${versionString}v${version}\n`);
+
+export const playerManager = new PlayerManager();
 
 export let toClient: Client;
 const proxy = new InstantConnectProxy({
