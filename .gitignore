@@ -9,6 +9,8 @@ packetDump.json
 !dashboard/**
 **/.DS_STORE
 
+private/
+
 # Plugins
 
 plugins/*
