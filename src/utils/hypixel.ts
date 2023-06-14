@@ -8,7 +8,7 @@ export function createClient(apiKey: string): Client {
     silent: true,
     headers: {
       // Just leaving our footprint :D
-      'User-Agent': 'HybrProxy | https://github.com/HybrisMC/HybrProxy-Pre',
+      'User-Agent': 'HybrProxy | https://github.com/HybrisMC/HybrProxy',
     },
   });
 
