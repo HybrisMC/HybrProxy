@@ -18,14 +18,12 @@ const app = createApp(App).use(store).mount('#app');
 export let { value: proc } = ref(null);
 
 const started = Date.now();
-let failedAttempts = 0;
 function setup() {
   return new Promise((res, rej) => {
     const ws = new WebSocket(`ws://localhost:16055`);
 
     ws.onopen = () => {
       ipcRenderer.send('ConnectionState', true);
-      failedAttempts = 0;
       store.state.failedPackets.forEach((p) => ws.send(p));
       store.state.failedPackets = [];
       console.log('[WebSocket] Connected!');
@@ -37,20 +35,9 @@ function setup() {
     };
     ws.onclose = () => {
       ipcRenderer.send('ConnectionState', false);
-      failedAttempts += 1;
       store.state.ws = null;
       console.log('[WebSocket] Disconnected');
       setTimeout(() => setup(), 500);
-      if (failedAttempts >= 6 && !store.state.ready) {
-        failedAttempts = 0;
-        console.log('[WebSocket] Failed to connect 6 times, starting process');
-        startProcess();
-        showNotification(
-          'Failed to connect to HybrProxy<br/>Started new HybrProxy process',
-          'info',
-          2000
-        );
-      }
     };
     ws.onmessage = async ({ data: raw }) => {
       /** @type {{ op: string, data: any }} */
@@ -101,6 +88,7 @@ function setup() {
     };
   });
 }
+startProcess();
 setup();
 
 setInterval(
