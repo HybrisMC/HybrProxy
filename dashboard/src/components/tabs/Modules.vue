@@ -44,12 +44,10 @@
           {{ m.enabled ? 'ENABLED' : 'DISABLED' }}
         </button>
         <button
-          class="module-options-btn"
+          class="module-options-btn fa-regular fa-gear"
           @click="openModuleSettings(m)"
           v-if="$store.state.data.settingsSchemas[m.key]"
-        >
-          OPTIONS
-        </button>
+        ></button>
       </div>
     </div>
 
@@ -184,30 +182,23 @@ export default {
 }
 
 .module-options-btn {
-  width: 45%;
-  height: 30px;
+  text-align: center;
   text-shadow: var(--text-shadow);
-  font-size: 15px;
-  letter-spacing: 5px;
+  font-size: 28px;
   font-weight: 600;
   position: absolute;
   cursor: pointer;
-  margin-left: -23%;
-  bottom: 18px;
-  background-color: var(--color-darker-gray);
+  left: 87.5%;
+  bottom: 85%;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
-  transition: filter 0.2s ease-in-out, bottom 0.2s ease-in-out;
-  filter: brightness(1.4);
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  transition: filter 0.2s ease-in-out;
+  filter: brightness(0.5);
+  border-radius: 100px;
   z-index: 99;
 }
 .module-options-btn:hover {
-  filter: brightness(1.2);
+  filter: brightness(0.85);
   cursor: default;
-  bottom: 50px;
-}
-.module-toggle-btn:hover + .module-options-btn {
-  bottom: 50px;
 }
 </style>
