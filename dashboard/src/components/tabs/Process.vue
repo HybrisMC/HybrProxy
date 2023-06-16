@@ -28,14 +28,19 @@ export default {
       return consoleLines;
     },
   },
-  beforeMount() {
-    consoleLines.push(...(proc.stdout?.read()?.toString()?.split('\n') || []));
-
-    proc.stdout.on('readable', () => {
+  methods: {
+    readLines() {
       consoleLines.push(
         ...(proc.stdout?.read()?.toString()?.split('\n') || [])
       );
-    });
+      consoleLines.push(
+        ...(proc.stderr?.read()?.toString()?.split('\n') || [])
+      );
+    },
+  },
+  beforeMount() {
+    this.readLines();
+    proc.stdout.on('readable', () => this.readLines());
 
     proc.on('disconnect', () => {
       consoleLines = [];
