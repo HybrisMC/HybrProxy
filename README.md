@@ -115,3 +115,9 @@ Open a browser and login with your Microsoft account.
 ## 🧪 Contributing
 
 If you want to contribute features, please make a [`fork`](https://github.com/HybrisMC/HybrProxy/fork) of the branch.
+
+---
+
+## ⭐ Credits
+
+See the credits in [CREDITS.md](./CREDITS.md).
