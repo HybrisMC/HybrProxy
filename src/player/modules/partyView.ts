@@ -179,7 +179,7 @@ player.listener.on('switch_server', async () => {
 player.listener.on('player_join', (id, name) => {
   if (playerModule.enabled && party[name.toLowerCase()]) {
     player.customClient.addTeammate({
-      uuid: parseUUID(party[name.toLowerCase()].uuid),
+      uuid: parseUUID(party[name.toLowerCase()]),
     });
   }
 });
