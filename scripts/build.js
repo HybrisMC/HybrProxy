@@ -31,7 +31,7 @@ if (!process.argv.includes('--noDashboard')) {
       ? 'cd dashboard && NODE_OPTIONS=--openssl-legacy-provider npm run build'
       : 'cd dashboard && npm run build'
   );
-  // do your thing fof linux skull
+  // do your thing for linux skull
   
 }
 
