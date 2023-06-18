@@ -28,13 +28,13 @@ if (!process.argv.includes('--noDashboard')) {
   );
   var isMac = process.platform === "darwin";
   if (isMac === true) run(
-    nodeVedsion > 16
+    nodeVersion > 16
       ? 'cd dashboard && export NODE_OPTIONS=--openssl-legacy-provider && npm run build'
       : 'cd dashboard && npm run build'
   );
   var isLinux = process.platform === "linux";
   if (isLinux === true) run(
-    nodeVedsion > 16
+    nodeVersion > 16
       ? 'cd dashboard && export NODE_OPTIONS=--openssl-legacy-provider && npm run build'
       : 'cd dashboard && npm run build'
   );
