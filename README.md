@@ -32,9 +32,7 @@ To use it you need to have [NodeJS 16](https://nodejs.org/download/release/v16.2
 
 Linux is currently not working and needs to be fixed.
 
-Macos can use 16+.
-
-Windows can use 16+.
+MacOS and Windows can use 16+.
 
 **This is a pre-release version and may contain bugs, as it's still being worked on.**
 
