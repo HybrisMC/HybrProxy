@@ -30,9 +30,7 @@ Suggested features are always being considered and sometimes added.
 
 To use it you need to have [NodeJS 16](https://nodejs.org/download/release/v16.20.0/) or [above](https://nodejs.org/en/download) installed for HybrProxy to build correctly.
 
-Linux is currently not working and needs to be fixed.
-
-MacOS and Windows can use 16+.
+Linux, MacOS, and Windows can use 16+.
 
 **This is a pre-release version and may contain bugs, as it's still being worked on.**
 
