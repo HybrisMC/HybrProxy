@@ -25,14 +25,12 @@ if (!process.argv.includes('--noDashboard')) {
       ? 'cd dashboard && set NODE_OPTIONS=--openssl-legacy-provider && npm run build'
       : 'cd dashboard && npm run build'
   );
-  
   if (process.platform === "darwin") run(
     nodeVersion > 16
       ? 'cd dashboard && NODE_OPTIONS=--openssl-legacy-provider npm run build'
       : 'cd dashboard && npm run build'
   );
   // do your thing for linux skull
-  
 }
 
 console.log('\ninfo: build successful! 🎉\n -> Run the app using `npm start`');
