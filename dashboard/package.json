@@ -9,7 +9,11 @@
     "serve": "npm run setupCWD && vue-cli-service electron:serve",
     "postinstall": "npm run setupCWD"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HybrisMC/HybrProxy.git"
+  },
+  "author": "TBHGodPro",
   "license": "ISC",
   "dependencies": {
     "vue": "^3.2.47",
