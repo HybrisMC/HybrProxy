@@ -29,7 +29,11 @@ if (!process.argv.includes('--noDashboard')) {
       ? 'cd dashboard && NODE_OPTIONS=--openssl-legacy-provider npm run build'
       : 'cd dashboard && npm run build'
   );
-  // do your thing for linux skull
+  if (process.platform === "linux") run(
+    nodeVersion > 16
+      ? 'cd dashboard && NODE_OPTIONS=--openssl-legacy-provider npm run build'
+      : 'cd dashboard && npm run build'
+  );
 }
 
 console.log('\ninfo: build successful! 🎉\n -> Run the app using `npm start`');
