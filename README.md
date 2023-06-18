@@ -104,7 +104,7 @@ Go to HybrProxy/dashboard/build. You should then see the specific package for th
 
 You will still need console for issues within the code to either report or solve yourself.
 
-### Arguments for console
+### Arguments
 
 HybrProxy supports the following arguments:
 
