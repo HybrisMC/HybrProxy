@@ -10,6 +10,8 @@ Credits to people and tools which helped out during the development of HybrProxy
 
 ### README Creator = [Leoo](https://github.com/heyitsleo)
 
+### Bug Tester = [Thororen](https://github.com/thororen1234)
+
 ## Libraries
 
 ### Main Proxy Libraries = [PrismarineJS](https://github.com/PrismarineJS)
