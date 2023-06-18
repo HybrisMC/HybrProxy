@@ -19,21 +19,20 @@ if (!process.argv.includes('--noDashboard')) {
   if (nodeVersion < 16)
     throw new Error('You must use Node 16 or higher to build dashboard!');
   if (nodeVersion > 16) console.log('fix: Setting OpenSSL Provider 🐛');
-
-  var isWin = process.platform === "win32";
-  if (isWin === true) run(
+  
+  if (process.platform === "win32") run(
     nodeVersion > 16
       ? 'cd dashboard && set NODE_OPTIONS=--openssl-legacy-provider && npm run build'
       : 'cd dashboard && npm run build'
   );
-  var isMac = process.platform === "darwin";
-  if (isMac === true) run(
+  
+  if (process.platform === "darwin") run(
     nodeVersion > 16
       ? 'cd dashboard && export NODE_OPTIONS=--openssl-legacy-provider && npm run build'
       : 'cd dashboard && npm run build'
   );
-  var isLinux = process.platform === "linux";
-  if (isLinux === true) run(
+  
+  if (process.platform === "linux") run(
     nodeVersion > 16
       ? 'cd dashboard && export NODE_OPTIONS=--openssl-legacy-provider && npm run build'
       : 'cd dashboard && npm run build'
