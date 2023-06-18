@@ -1,5 +1,5 @@
 const { execSync } = require('child_process');
-import { platform } from 'node:process';
+const { platform } = require('process');
 
 function run(executable, params = []) {
   execSync(`${executable} ${params.join(' ')}`, {
