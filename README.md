@@ -60,7 +60,7 @@ At the root of the project (or in the same directory as the executable) create a
 ```jsonc
 {
   "apiKey": "API KEY HERE", // To get an api key, head to https://developer.hypixel.net/ and log in with your Hypixel Forums Account.
-    // (NOTE: You need to create an app on the website. After that, you can click create API key and enter that here)
+    // (NOTE: You need to create an app on the website. We suggest using the personal option. After that, you can click create API key and enter that here)
   "server": {
     // Change this to the server you are trying to connect, by default it will be set as hypixel.
     // (NOTE: Most other servers will not work)
