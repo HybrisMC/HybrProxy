@@ -13,6 +13,9 @@ run('npx', ['tsc']);
 if (!process.argv.includes('--noDashboard')) {
   console.log('info: building dashboard 🌐');
 
+  if (!['win32', 'darwin', 'linux'].includes(process.platform))
+    throw new Error('This platform does not support building dashboard!');
+
   const nodeVersion = parseInt(process.version.split('.')[0].substring(1));
 
   if (nodeVersion < 16)
@@ -21,7 +24,9 @@ if (!process.argv.includes('--noDashboard')) {
 
   run(
     nodeVersion > 16
-      ? 'cd dashboard && NODE_OPTIONS=--openssl-legacy-provider npm run build'
+      ? `cd dashboard && ${
+          process.platform === 'win32' ? 'set' : 'export'
+        } NODE_OPTIONS=--openssl-legacy-provider && npm run build`
       : 'cd dashboard && npm run build'
   );
 }
