@@ -44,13 +44,13 @@ Once the repo is downloaded move to the directory and install the dependencies
 
 ```bash
 $ cd HybrProxy
-$ npm install
+$ pnpm install
 ```
 
 You can now build the project, you will be able to use the exe file located in the `dist` folder. Or use the `npm start` command to directly run the compiled TypeScript
 
 ```bash
-$ npm run build
+$ pnpm run build
 ```
 
 ## Configuration ⚙️
@@ -90,7 +90,7 @@ At the root of the project (or in the same directory as the executable) create a
 ### With NodeJS
 
 ```bash
-$ npm start
+$ pnpm start
 ```
 
 ### Arguments
