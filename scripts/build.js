@@ -8,7 +8,7 @@ function run(executable, params = []) {
 }
 
 console.log('info: compiling typescript 💽');
-run('npx', ['tsc']);
+run('pnpm', ['exec', 'tsc']);
 
 if (!process.argv.includes('--noDashboard')) {
   console.log('info: building dashboard 🌐');
@@ -24,11 +24,9 @@ if (!process.argv.includes('--noDashboard')) {
 
   run(
     nodeVersion > 16
-      ? `cd dashboard && ${
-          process.platform === 'win32' ? 'set' : 'export'
-        } NODE_OPTIONS=--openssl-legacy-provider && npm run build`
-      : 'cd dashboard && npm run build'
+      ? 'cd dashboard && cross-env NODE_OPTIONS=--openssl-legacy-provider pnpm run build'
+      : 'cd dashboard && pnpm run build'
   );
 }
 
-console.log('\ninfo: build successful! 🎉\n -> Run the app using `npm start`');
+console.log('\ninfo: build successful! 🎉\n -> Run the app using `pnpm start`');

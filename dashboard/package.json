@@ -5,9 +5,9 @@
   "main": "background.js",
   "scripts": {
     "setupCWD": "node setupCWD.js",
-    "build": "npm run setupCWD && vue-cli-service electron:build",
-    "serve": "npm run setupCWD && vue-cli-service electron:serve",
-    "postinstall": "npm run setupCWD"
+    "build": "pnpm run setupCWD && vue-cli-service electron:build",
+    "serve": "pnpm run setupCWD && vue-cli-service electron:serve",
+    "postinstall": "pnpm run setupCWD"
   },
   "repository": {
     "type": "git",
