@@ -47,7 +47,7 @@ $ cd HybrProxy
 $ pnpm install
 ```
 
-You can now build the project, you will be able to use the exe file located in the `dist` folder. Or use the `npm start` command to directly run the compiled TypeScript
+You can now build the project, you will be able to use the exe file located in the `dist` folder. Or use the `pnpm start` command to directly run the compiled TypeScript
 
 ```bash
 $ pnpm run build
