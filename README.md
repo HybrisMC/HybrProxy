@@ -28,9 +28,11 @@ Suggested features are always being considered and sometimes added.
 
 ### ⚠️ Requirements
 
-To use it you need to have [NodeJS 16](https://nodejs.org/download/release/v16.20.0/) installed.
+To use it you need to have [NodeJS 16](https://nodejs.org/download/release/v16.20.0/) or [above](https://nodejs.org/en/download) installed for HybrProxy to build correctly.
 
-**The version may contain bugs, as it's not fully released!**
+Linux, MacOS, and Windows can use 16+.
+
+**This is a pre-release version and may contain bugs, as it's still being worked on.**
 
 ## 📝 Building from Source
 
@@ -55,13 +57,12 @@ $ npm run build
 
 ## Configuration ⚙️
 
-At the root of the project (or in the same directory as the executable) create a `config.jsonc` file with the following content:
+At the root of the project rename `config.example.jsonc` to `config.jsonc`. It should contain the following:
 
 ```jsonc
 {
-// To get an API key, head to https://developer.hypixel.net/ and log in with your Hypixel Forums Account.
-// (NOTE: You need to create an app on the website. After that, you can click create API key and enter that here)
-  "apiKey": "API KEY HERE",
+  "apiKey": "API KEY HERE", // To get an api key, head to https://developer.hypixel.net/ and log in with your Hypixel Forums Account.
+    // (NOTE: You need to create an app on the website. We suggest using the personal option. After that, you can click create API key and enter that here)
   "server": {
     // Change this to the server you are trying to connect, by default it will be set as hypixel.
     // (NOTE: Most other servers will not work)
@@ -94,6 +95,12 @@ At the root of the project (or in the same directory as the executable) create a
 ```bash
 $ npm start
 ```
+
+### Starting without console
+
+Go to HybrProxy/dashboard/build. You should then see the specific package for the operating system you built HybrProxy on. It will end with exe/AppImage/dmg. Run the package and HybrProxy will install and all you will need to do is run it.
+
+You will still need console for issues within the code to either report or solve yourself.
 
 ### Arguments
 
