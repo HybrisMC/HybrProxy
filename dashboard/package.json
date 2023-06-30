@@ -1,5 +1,5 @@
 {
-  "name": "dashboard",
+  "name": "hybrproxy",
   "version": "1.0.0",
   "description": "",
   "main": "background.js",

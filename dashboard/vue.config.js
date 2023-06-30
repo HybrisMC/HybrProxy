@@ -7,18 +7,11 @@ module.exports = {
         appId: 'com.hybrproxy.dashboard',
         productName: 'HybrProxy Dashboard',
         win: {
-          target: 'nsis',
+          target: 'portable',
           icon: 'build/icons/win/icon.ico',
           publisherName: 'HybrProxy Dashboard',
           verifyUpdateCodeSignature: true,
           requestedExecutionLevel: 'asInvoker',
-        },
-        nsis: {
-          oneClick: true,
-          installerIcon: 'build/icons/win/icon.ico',
-          uninstallerIcon: 'build/icons/win/icon.ico',
-          installerHeaderIcon: 'build/icons/win/icon.ico',
-          runAfterFinish: true,
         },
         linux: {
           target: 'AppImage',
@@ -30,8 +23,8 @@ module.exports = {
           category: 'Game',
         },
         mac: {
-          category: 'Game',
           target: 'dmg',
+          category: 'Game',
           icon: 'build/icons/macos/icon.icns',
         },
       },
