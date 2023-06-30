@@ -98,7 +98,7 @@ $ npm start
 
 ### Starting without console
 
-Go to HybrProxy/dashboard/build. You should then see the specific package for the operating system you built HybrProxy on. It will end with exe/AppImage/dmg. Run the package and HybrProxy will install and all you will need to do is run it.
+Go to `HybrProxy/dashboard/dist`. You should then see the specific package for the operating system you built HybrProxy on. It will end with `exe`/`AppImage`/`dmg` (`dmg` will be inside a directory which starts with the word "mac"). Run the file and HybrProxy will automatically start running!
 
 You will still need console for issues within the code to either report or solve yourself.
 
@@ -123,7 +123,7 @@ Open a browser and login with your Microsoft account.
 
 ## 🧪 Contributing
 
-If you want to contribute features, please make a [`fork`](https://github.com/HybrisMC/HybrProxy/fork) of the branch.
+If you want to contribute features, please make a [`fork`](https://github.com/HybrisMC/HybrProxy/fork) of the repository.
 
 ---
 
