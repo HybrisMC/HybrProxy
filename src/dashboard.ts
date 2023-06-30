@@ -77,7 +77,7 @@ export class DashboardManager {
         case 'win32': {
           const file = (await readdir(dist)).find((i) => i.endsWith('.exe'));
 
-          command = `start "${file}"`;
+          command = `"${file}"`;
           break;
         }
         case 'linux': {
