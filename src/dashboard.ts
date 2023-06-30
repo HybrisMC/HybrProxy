@@ -75,7 +75,10 @@ export class DashboardManager {
           break;
         }
         case 'win32': {
-          const file = (await readdir(dist)).find((i) => i.endsWith('.exe'));
+          const file = join(
+            dist,
+            (await readdir(dist)).find((i) => i.endsWith('.exe'))
+          ).replace(/\//g, '\\');
 
           command = `"${file}"`;
           break;
