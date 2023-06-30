@@ -47,49 +47,61 @@ export class DashboardManager {
     (async () => {
       const config = await getConfigAsync();
 
+      if (!config.dashboard.enabled) return;
+
       this.server.on('listening', () =>
         logger.info(`Dashboard WebSocket Online at Port 16055`)
       );
 
       httpServer.listen(16055);
 
-      if (config.dashboard.enabled)
-        setTimeout(async () => {
-          const dist = join(process.cwd(), 'dashboard/dist');
+      await new Promise((res) => setTimeout(res, 3000));
+
+      const dist = join(process.cwd(), 'dashboard/dist');
+
+      let command;
+      switch (process.platform) {
+        case 'darwin': {
           const product = join(
             dist,
-            (await readdir(dist)).find(
-              (i) => !i.includes('.') && i !== 'bundled'
-            )
+            (await readdir(dist)).find((i) => i.startsWith('mac'))
           );
           const file = join(
             product,
-            (await readdir(product)).find((i) => !i.startsWith('.'))
+            (await readdir(product)).find((i) => i.endsWith('.app'))
           );
 
-          let command;
-          switch (process.platform) {
-            case 'darwin':
-              command = `open "${file}"`;
-              break;
-            case 'win32':
-              command = `start "${file}"`;
-              break;
-            default:
-              return logger.error(
-                `Dashboard is not allowed on this operating system (${process.platform})`
-              );
-          }
+          command = `open "${file}"`;
+          break;
+        }
+        case 'win32': {
+          const file = (await readdir(dist)).find((i) => i.endsWith('.exe'));
 
-          if (!this.socket)
-            exec(
-              // `npx electron "${join(process.cwd(), 'dashboard/dist/bundled')}"`,
-              command,
-              (err, out) => {
-                if (err) logger.error('[Dashboard Error]', err);
-              }
-            );
-        }, 3500);
+          command = `start "${file}"`;
+          break;
+        }
+        case 'linux': {
+          const file = (await readdir(dist)).find((i) =>
+            i.endsWith('.AppImage')
+          );
+
+          command = `cd "${dist}" && chmod +x "./${file}" && "./${file}"`;
+          break;
+        }
+        default:
+          return logger.error(
+            `Dashboard is not allowed on this operating system (${process.platform})`
+          );
+      }
+
+      if (!this.socket)
+        exec(
+          // `npx electron "${join(process.cwd(), 'dashboard/dist/bundled')}"`,
+          command,
+          (err, out) => {
+            if (err) logger.error('[Dashboard Error]', err);
+          }
+        );
     })();
   }
 
