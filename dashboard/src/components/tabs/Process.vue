@@ -31,18 +31,18 @@ export default {
   methods: {
     readLines() {
       consoleLines.push(
-        ...(proc.stdout?.read()?.toString()?.split('\n') || [])
+        ...(proc?.stdout?.read()?.toString()?.split('\n') || [])
       );
       consoleLines.push(
-        ...(proc.stderr?.read()?.toString()?.split('\n') || [])
+        ...(proc?.stderr?.read()?.toString()?.split('\n') || [])
       );
     },
   },
   beforeMount() {
     this.readLines();
-    proc.stdout.on('readable', () => this.readLines());
+    proc?.stdout.on('readable', () => this.readLines());
 
-    proc.on('disconnect', () => {
+    proc?.on('disconnect', () => {
       consoleLines = [];
     });
   },
